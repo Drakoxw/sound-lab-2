@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TOKEN_KEY } from '@constants/common';
-import { AppComponent } from '@src/app/app.component';
+import { AppComponent } from '../app.component';
 
 class LocalStorage implements Storage {
   [name: string]: any;
