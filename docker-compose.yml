@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  soundlab2:
+    image: soundlab2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
