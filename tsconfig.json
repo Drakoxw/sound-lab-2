@@ -27,6 +27,12 @@
       "@public/*": [ "./src/app/modules/public/*" ],
       "@private/*": [ "./src/app/modules/private/*" ],
       "@shared/*": [ "./src/app/modules/shared/*" ],
+      "@interfaces/*": [ "./src/app/core/interfaces/*" ],
+      "@constants/*": [ "./src/app/core/constants/*" ],
+      "@mocks/*": [ "./src/app/core/mocks/*" ],
+      "@pipes/*": [ "./src/app/core/pipes/*" ],
+      "@services/*": [ "./src/app/services/*" ],
+      "@utils/*": [ "./src/app/utils/*" ],
     }
   },
   "angularCompilerOptions": {
