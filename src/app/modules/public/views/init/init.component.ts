@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './init.component.css'
 })
 export class InitComponent {
+
   title = 'sound-lab-2';
 }
