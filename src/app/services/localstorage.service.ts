@@ -61,6 +61,7 @@ export class LocalstorageService implements Storage {
   }
   /** Borrar el token */
   deleteToken(): void {
+    this.tokenString = '';
     this.removeItem(TOKEN_KEY);
   }
 

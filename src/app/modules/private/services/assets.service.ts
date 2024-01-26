@@ -1,12 +1,12 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { HttpService } from './http.service';
+import { HttpService } from '../../../services/http.service';
 import {
   AdminImageRequest,
   Base64,
   FileAssetsData,
   ImageMimeType,
 } from '@interfaces/index';
-import { ToastrAlertService } from './toastr-alert.service';
+import { ToastrAlertService } from '@services/index';
 import { Subscription } from 'rxjs';
 
 @Injectable({

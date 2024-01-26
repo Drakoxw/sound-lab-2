@@ -7,7 +7,6 @@ import { LocalstorageService } from '@services/localstorage.service';
 import { LoginRequest } from '@interfaces/index';
 import { URL_API_BASE } from '@constants/common';
 import { ITokenPayload, parseJwt } from '@utils/token';
-import { logDev } from '@utils/console';
 
 @Injectable({
   providedIn: 'root'
