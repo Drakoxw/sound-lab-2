@@ -1,5 +1,5 @@
 import { Component, WritableSignal, inject } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { WHATSAPP_LINK } from '@constants/index';
@@ -9,12 +9,12 @@ import { AuthService } from '@services/index';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [NgClass, RouterModule],
+  imports: [CommonModule, NgClass, RouterModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent {
-  private authService = inject(AuthService);
+  public authService = inject(AuthService);
 
   linkWhastapp = WHATSAPP_LINK;
 
@@ -22,8 +22,6 @@ export class NavBarComponent {
 
   showNavbar: boolean = false;
 
-  activeNav: WritableSignal<boolean> = this.authService.menu;
-  isAdmin: WritableSignal<boolean> = this.authService.admin;
-
   dev: boolean = false;
+
 }
