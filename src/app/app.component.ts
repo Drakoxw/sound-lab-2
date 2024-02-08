@@ -2,9 +2,9 @@ import { Component, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
+
 import { AuthService, LocalstorageService } from './services';
 import { MENU_KEY } from '@constants/index';
-
 
 @Component({
   selector: 'app-root',
