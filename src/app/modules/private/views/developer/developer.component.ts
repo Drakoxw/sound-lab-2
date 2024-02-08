@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './developer.component.html',
   styleUrl: './developer.component.css'
 })
-export class DeveloperComponent {
+export default class DeveloperComponent {
 
 }

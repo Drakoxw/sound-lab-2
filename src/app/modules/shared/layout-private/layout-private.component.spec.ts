@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardPublicComponent } from './dashboard-public.component';
+import { LayoutPrivateComponent } from './layout-private.component';
 
-describe('DashboardPublicComponent', () => {
-  let component: DashboardPublicComponent;
-  let fixture: ComponentFixture<DashboardPublicComponent>;
+describe('LayoutPrivateComponent', () => {
+  let component: LayoutPrivateComponent;
+  let fixture: ComponentFixture<LayoutPrivateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardPublicComponent]
+      imports: [LayoutPrivateComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DashboardPublicComponent);
+    fixture = TestBed.createComponent(LayoutPrivateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

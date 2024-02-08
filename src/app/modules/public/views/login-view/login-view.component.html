@@ -1,1 +1,67 @@
-<p>login-view works!</p>
+<section class="isView flex items-center justify-center">
+  <div class="bg-black bg-opacity-50">
+    <div
+      class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0"
+    >
+      <img
+        class="w-56 h-24 mr-2"
+        src="https://sound-lab.com.co/assets/img/logos/logo-blanco.png"
+        alt="logo sound-lab"
+      />
+      <div
+        class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1
+            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
+          >
+            Inicia tu sesión
+          </h1>
+          <form
+            [formGroup]="form"
+            (ngSubmit)="onSubmit()"
+            class="flex flex-col gap-y-4 md:gap-y-6"
+          >
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Email/usuario</label
+              >
+              <input
+                type="text"
+                formControlName="user"
+                id="user"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="name@company.com"
+                required=""
+              />
+            </div>
+            <div>
+              <label
+                for="password"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Contraseña</label
+              >
+              <input
+                type="password"
+                formControlName="pass"
+                id="password"
+                placeholder="••••••••"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <app-button
+              [isLoading]="load"
+              [isDisable]="load"
+              type="submit"
+              class="mt-2"
+              >Ingresar</app-button
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
