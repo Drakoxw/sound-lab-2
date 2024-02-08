@@ -8,11 +8,6 @@ export const routes: Routes = [
     loadComponent: () => import('@shared/dashboard-public/dashboard-public.component'),
     children: [
       {
-        path: '',
-        title: TITLE_DEFAULT,
-        loadComponent: () => import('@public/views/home/home.component')
-      },
-      {
         path: 'inicio',
         title: TITLE_DEFAULT,
         loadComponent: () => import('@public/views/home/home.component')
@@ -26,6 +21,11 @@ export const routes: Routes = [
         path: 'login',
         title: 'Inicia sesion',
         loadComponent: () => import('@public/views/home/home.component')
+      },
+      {
+        path: '',
+        redirectTo: '/inicio',
+        pathMatch: 'full'
       }
     ]
   },
