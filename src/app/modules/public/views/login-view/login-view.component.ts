@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './login-view.component.html',
   styleUrl: './login-view.component.css'
 })
-export class LoginViewComponent {
+export default class LoginViewComponent {
 
 }

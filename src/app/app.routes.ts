@@ -8,14 +8,24 @@ export const routes: Routes = [
       {
         path: '',
         title: 'Bienvenido a la casa del DJ',
-        loadComponent: () => import('@public/views/home/home.component').then(m => m.HomeComponent)
+        loadComponent: () => import('@public/views/home/home.component')
       },
       {
         path: 'inicio',
         title: 'Bienvenido a la casa del DJ',
-        loadComponent: () => import('@public/views/home/home.component').then(m => m.HomeComponent)
+        loadComponent: () => import('@public/views/home/home.component')
+      },
+      {
+        path: 'contacto',
+        title: 'Bienvenido a la casa del DJ',
+        loadComponent: () => import('@public/views/home/home.component')
+      },
+      {
+        path: 'login',
+        title: 'Inicia sesion',
+        loadComponent: () => import('@public/views/home/home.component')
       }
     ]
   },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/inicio', pathMatch: 'full' },
 ];
