@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 
-import { NavBarComponent } from '@shared/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavBarComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
 })
 export class AppComponent {
@@ -17,5 +16,5 @@ export class AppComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: any) {
     AppComponent.isBrowser.next(isPlatformBrowser(platformId));
   }
-  title = 'sound-lab-2';
+  title = 'sound-lab';
 }

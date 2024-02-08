@@ -1,10 +1,21 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '@public/views/home/home.component';
-import { InitComponent } from '@public/views/init/init.component';
 
 export const routes: Routes = [
-  { path: '', component: InitComponent },
-  { path: 'home', component: HomeComponent },
-  // { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: HomeComponent },
+  {
+    path: '',
+    loadComponent: () => import('@shared/dashboard-public/dashboard-public.component'),
+    children: [
+      {
+        path: '',
+        title: 'Bienvenido a la casa del DJ',
+        loadComponent: () => import('@public/views/home/home.component').then(m => m.HomeComponent)
+      },
+      {
+        path: 'inicio',
+        title: 'Bienvenido a la casa del DJ',
+        loadComponent: () => import('@public/views/home/home.component').then(m => m.HomeComponent)
+      }
+    ]
+  },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
