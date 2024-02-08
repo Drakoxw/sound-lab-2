@@ -1471,6 +1471,13 @@
   resolved "https://registry.npmjs.org/@ngtools/webpack/-/webpack-17.1.0.tgz"
   integrity sha512-FAp5Vh4Y4DFDnrxEitggEkeDwHCml7m6hZUgohvA6n6mwrMT0ZZXnk3MIrKRnT6A9cr1wcnxMW+jIXx/cJZGlw==
 
+"@ngx-lite/json-ld@^14.0.0":
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-lite/json-ld/-/json-ld-14.0.0.tgz#c60a5f248770d1a51fe1bd6e7f7a1f7d186fd52c"
+  integrity sha512-Pj1NhhCR0F3yOyBW9650BR4V7tjvbi5V+hJiqO4JO1euBYpK1t0NkwOvO42KMHFkwx6Q6SL0yQouHRlBauUiFA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -6004,7 +6011,7 @@ ts-interface-checker@^0.1.9:
   resolved "https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz"
   integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
 
-tslib@2.6.2, tslib@^2.1.0, tslib@^2.3.0:
+tslib@2.6.2, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.0:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
