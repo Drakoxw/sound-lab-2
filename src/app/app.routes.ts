@@ -1,56 +1,74 @@
 import { Routes } from '@angular/router';
 import { authAdminGuard } from './core/guard/auth-admin.guard';
+import { PATHS_MODULE_CLIENT } from '@constants/routes';
 
 const TITLE_DEFAULT = 'SoundLab - La casa del DJ';
+const { PRIVATE, PUBLIC } = PATHS_MODULE_CLIENT;
 
 export const routes: Routes = [
   {
-    path: 'admin',
+    path: PRIVATE.ROOT,
     canActivate: [authAdminGuard],
-    loadComponent: () => import('@shared/layout-private/layout-private.component'),
+    loadComponent: () =>
+      import('@shared/layout-private/layout-private.component'),
     children: [
       {
-        path: 'items',
+        path: PRIVATE.ITEMS,
         title: TITLE_DEFAULT,
-        loadComponent: () => import('@private/views/admin/admin.component')
+        loadComponent: () => import('@private/views/items/items.component'),
       },
       {
-        path: 'dev',
+        path: PRIVATE.ADMIN_IMAGES,
         title: TITLE_DEFAULT,
-        loadComponent: () => import('@private/views/developer/developer.component')
+        loadComponent: () =>
+          import('@private/views/admin-images/admin-images.component'),
+      },
+      {
+        path: PRIVATE.TAGS,
+        title: TITLE_DEFAULT,
+        loadComponent: () => import('@private/views/tags/tags.component'),
+      },
+      {
+        path: PRIVATE.DEVELOPER,
+        title: TITLE_DEFAULT,
+        loadComponent: () =>
+          import('@private/views/developer/developer.component'),
       },
       {
         path: '',
-        redirectTo: '/admin/items',
-        pathMatch: 'full'
-      }
-    ]
+        redirectTo: `/${PRIVATE.ROOT}/${PRIVATE.ITEMS}`,
+        pathMatch: 'full',
+      },
+    ],
   },
   {
-    path: '',
-    loadComponent: () => import('@shared/layout-public/layout-public.component'),
+    path: PUBLIC.ROOT,
+    loadComponent: () =>
+      import('@shared/layout-public/layout-public.component'),
     children: [
       {
-        path: 'inicio',
+        path: PUBLIC.HOME,
         title: TITLE_DEFAULT,
-        loadComponent: () => import('@public/views/home/home.component')
+        loadComponent: () => import('@public/views/home/home.component'),
       },
       {
-        path: 'contactanos',
+        path: PUBLIC.CONTACT_US,
         title: 'Contactanos via email',
-        loadComponent: () => import('@public/views/contact-me/contact-me.component')
+        loadComponent: () =>
+          import('@public/views/contact-me/contact-me.component'),
       },
       {
-        path: 'login',
+        path: PUBLIC.LOGIN,
         title: 'Inicia sesion',
-        loadComponent: () => import('@public/views/login-view/login-view.component')
+        loadComponent: () =>
+          import('@public/views/login-view/login-view.component'),
       },
       {
         path: '',
-        redirectTo: '/inicio',
-        pathMatch: 'full'
-      }
-    ]
+        redirectTo: `/${PUBLIC.HOME}`,
+        pathMatch: 'full',
+      },
+    ],
   },
-  { path: '**', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: '**', redirectTo: `/${PUBLIC.HOME}`, pathMatch: 'full' },
 ];

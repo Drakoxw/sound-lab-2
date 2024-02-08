@@ -18,7 +18,7 @@
         [class]="authService.showMenu() ? 'flex' : 'hidden'"
         class="list-style-none absolute mt-[33px] lg:static z-50 ml-auto bg-black bg-opacity-90 lg:bg-transparent lg:bg-opacity-100 flex-col pl-0 lg:mt-1 lg:flex-row text-gray-400 lg:mr-4 w-screen lg:w-full lg:justify-end"
       >
-        <a [routerLink]="routes.home" routerLinkActive #rlH="routerLinkActive">
+        <a [routerLink]="routes.PUBLIC.HOME" routerLinkActive #rlH="routerLinkActive">
           <li
             [class]="rlH.isActive ? 'bg-pink-800' : ''"
             class="hover:bg-pink-800 hover:bg-opacity-50 hover:text-white pl-2 lg:mb-0 lg:pl-0 lg:pr-1 p-2 cursor-pointer"
@@ -32,7 +32,7 @@
         </a>
 
         <a
-          [routerLink]="routes.contactUs"
+          [routerLink]="routes.PUBLIC.CONTACT_US"
           routerLinkActive
           #rlC="routerLinkActive"
         >
@@ -49,7 +49,7 @@
         </a>
 
         <a
-          [routerLink]="routes.login"
+          [routerLink]="routes.PUBLIC.LOGIN"
           routerLinkActive
           #rlLg="routerLinkActive"
         >
@@ -67,7 +67,7 @@
 
         <a
           *ngIf="authService.isAdmin()"
-          [routerLink]="routes.developer"
+          [routerLink]="routes.PRIVATE.DEVELOPER"
           routerLinkActive
           #rlDev="routerLinkActive"
         >
@@ -85,7 +85,7 @@
 
         <a
           *ngIf="authService.isAdmin()"
-          [routerLink]="routes.admin"
+          [routerLink]="routes.PRIVATE.ITEMS"
           routerLinkActive
           #rlAdmin="routerLinkActive"
         >
@@ -96,7 +96,7 @@
             <span
               [class]="rlAdmin.isActive ? 'text-white' : ''"
               class="p-0 transition duration-200 hover:ease-in-out focus:text-white motion-reduce:transition-none lg:px-2 [&.active]:text-white"
-              >Admin</span
+              >Crear Items</span
             >
           </li>
         </a>

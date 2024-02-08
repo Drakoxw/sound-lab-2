@@ -46,7 +46,7 @@ export class LocalstorageService implements Storage {
       this.tokenString = token;
       return token;
     }
-    if (window) {
+    if (typeof window !== "undefined") {
       if (window.localStorage.getItem(TOKEN_KEY) != null) {
         return String(window.localStorage.getItem(TOKEN_KEY));
       }
