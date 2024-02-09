@@ -1,0 +1,20 @@
+.input {
+  @apply w-full text-[#666] h-10 shadow-none box-border transition-all duration-[0.2s] ease-linear font-medium border p-[0.75em] rounded-sm border-solid border-[#ccc] ;
+  background: #fafafa;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.minlabel {
+  @apply block text-[0.8em] text-[#2f3f50] leading-[1.2] font-medium;
+}
+
+.minlabelError {
+  @apply block text-[0.8em] text-red-600 leading-[1.2] font-medium;
+}
+
+li {
+  margin-bottom: 3px;
+}

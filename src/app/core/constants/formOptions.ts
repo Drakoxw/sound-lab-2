@@ -2,34 +2,29 @@ export type RadioOptionsContactUs = { value: string; label: string; id: string }
 
 export const radioButtonsFormContactUs: RadioOptionsContactUs[] = [
   {
-    value: 'Circuito Cerrado de Television',
-    label: 'Circuito Cerrado de Televisión',
-    id: 'Closed_TV_circuit',
+    value: 'Escenarios DJ',
+    label: 'Escenarios DJ',
+    id: 'DJ_stages',
   },
   {
-    value: 'Alarmas',
-    label: 'Alarmas',
-    id: 'alarms',
+    value: 'Respuestos',
+    label: 'Respuestos',
+    id: 'Spare_parts',
   },
   {
-    value: 'Soporte, Mantenimiento y Renovacion Tecnologica',
-    label: 'Soporte, Mantenimiento y Renovación Tecnológica',
+    label: 'Soporte, implementación o mantenimiento de sonido',
+    value: 'Soporte, implementación o mantenimiento de sonido',
     id: 'Technological_Support',
   },
   {
-    value: 'Cableado Estructurado',
-    label: 'Cableado Estructurado',
-    id: 'Structured_cabling',
+    value: 'Alquiler de equipos',
+    label: 'Alquiler de equipos',
+    id: 'Equipment_rental',
   },
   {
-    value: 'Redes y Enlaces Inalambricos',
-    label: 'Redes y Enlaces Inalámbricos',
-    id: 'Wireless_Networks',
-  },
-  {
-    value: 'Kits CCTV, Alarmas y Wi-Fi',
-    label: 'Kits CCTV, Alarmas y Wi-Fi',
-    id: 'Kits_CCTV_Alarms_WiFi',
+    value: 'Montaje de clubes o discotecas',
+    label: 'Montaje de clubes o discotecas',
+    id: 'assembly_of_clubs',
   },
   {
     value: 'Otro',

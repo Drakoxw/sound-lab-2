@@ -1,1 +1,165 @@
-<p>email-form works!</p>
+<section class="w-full h-full relative z-10 px-2">
+  <div class="bg-black bg-opacity-50">
+    <div
+      class="w-full flex items-center justify-center flex-col pb-4 px-6"
+    >
+      <lib-title tag="h1">DÉJANOS TU MENSAJE</lib-title>
+
+      <div
+        class="rounded-md bg-white bg-opacity-70 max-w-[580px] p-4 w-auto text-[#2f3f50]"
+      >
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          class="w-auto font-montserrat flex flex-col gap-4 p-4 max-h-[66vh] overflow-auto scroller"
+        >
+          <label
+            for="name"
+            [ngClass]="[
+              'block text-sm -mb-4 font-bold',
+              name.validateError ? 'text-red-600' : ''
+            ]"
+            >Nombre Completo <span class="text-red-600">*</span></label
+          >
+          <div class="flex w-full items-end gap-4">
+            <div class="w-full">
+              <input
+                formControlName="name"
+                type="text"
+                id="name"
+                class="input capitalize"
+                required
+              />
+              <label
+                [ngClass]="[name.validateError ? 'minlabelError' : 'minlabel']"
+                >Nombre</label
+              >
+            </div>
+
+            <div class="w-full">
+              <input
+                formControlName="lastname"
+                type="text"
+                id="lastname"
+                class="input capitalize"
+                required
+              />
+              <label
+                [ngClass]="[
+                  lastname.validateError ? 'minlabelError' : 'minlabel'
+                ]"
+                >Apellidos</label
+              >
+            </div>
+          </div>
+
+          <div class="w-full">
+            <label
+              for="email"
+              [ngClass]="[
+                'block text-sm  font-bold',
+                email.validateError ? 'text-red-600' : ''
+              ]"
+              >Email <span class="text-red-600">*</span></label
+            >
+            <input
+              formControlName="email"
+              type="email"
+              id="email"
+              class="input"
+              required
+            />
+          </div>
+
+          <div class="w-full">
+            <label
+              for="phone"
+              [ngClass]="[
+                'block text-sm font-bold',
+                phone.validateError ? 'text-red-600' : ''
+              ]"
+              >Telefono/Celular <span class="text-red-600">*</span></label
+            >
+            <input
+              formControlName="phone"
+              type="number"
+              id="phone"
+              class="input"
+              required
+            />
+          </div>
+
+          <div class="motivo">
+            <label
+              for="name"
+              [ngClass]="[
+                'block text-sm font-bold',
+                subject.validateError ? 'text-red-600' : ''
+              ]"
+              >Asunto <span class="text-red-600">*</span></label
+            >
+            <ul class="text-sm text-[#0a0a0a] leading-[1.2] font-normal">
+              <li *ngFor="let item of optionsSubject">
+                <label class="flex gap-2 mt-1 cursor-pointer">
+                  <input
+                    type="radio"
+                    formControlName="subject"
+                    [id]="item.id"
+                    name="subject"
+                    [value]="item.value"
+                  />{{ item.label }}</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="w-full" *ngIf="form.get('subject')?.value == 'Otro'">
+            <label
+              for="asunto"
+              [ngClass]="[
+                'block text-sm font-bold',
+                otherSubject.validateError ? 'text-red-600' : ''
+              ]"
+              >Asunto <span class="text-red-600">*</span></label
+            >
+            <input
+              formControlName="otherSubject"
+              type="text"
+              id="asunto"
+              class="input"
+              required
+            />
+          </div>
+
+          <div class="w-full">
+            <label
+              for="mensaje"
+              [ngClass]="[
+                'block text-sm font-bold',
+                message.validateError ? 'text-red-600' : ''
+              ]"
+              >Escribe tu mensaje <span class="text-red-600">*</span></label
+            >
+            <textarea
+              id="mensaje"
+              formControlName="message"
+              name="mensaje"
+              rows="4"
+              class="input !h-32"
+            ></textarea>
+          </div>
+
+          <app-button
+            styleButton="cifradoGreen"
+            type="submit"
+            class="md:w-48"
+            disable
+            [isLoading]="load"
+            [isDisable]="!form.valid && form.touched"
+            >{{ load ? "Enviando mensaje" : "Enviar mensaje" }}</app-button
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

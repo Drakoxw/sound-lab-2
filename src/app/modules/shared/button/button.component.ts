@@ -160,7 +160,8 @@ export class ButtonComponent {
   }
 
   emitClick(_: Event): void {
-    if (!this.load && this.active) {
+    if (this.load) { return }
+    if (this.active) {
       this.buttonClick.emit('clicked');
     }
   }
