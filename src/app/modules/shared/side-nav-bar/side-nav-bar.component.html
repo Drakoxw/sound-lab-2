@@ -1,0 +1,18 @@
+<aside
+  class="w-30 h-screen transition-transform bg-white bg-opacity-20 -translate-x-full sm:translate-x-0"
+>
+  <div class="h-full px-2 py-4 overflow-y-auto">
+    <ul class="space-y-2 py-2 font-medium">
+      @for (item of routes; track $index) {
+      <li>
+        <a [routerLink]="item.path"
+          class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100  group"
+          [ngClass]="[ currentPath === item.path ? 'bg-gray-100' : '' ]"
+        >
+          <span class="ms-3">{{ item.title }}</span>
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+</aside>

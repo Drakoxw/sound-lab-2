@@ -34,16 +34,37 @@ export const PATHS_MODULE_CLIENT = {
 };
 
 // RUTAS COMPLETAS PARA EL ROUTE LINK
-export const PATHS_FULL_CLIENT: RoutesClient = {
+export const PATHS_FULL_CLIENT = {
   PUBLIC: {
-    HOME: `/${PATHS_PUBLIC.HOME}`,
-    LOGIN: `/${PATHS_PUBLIC.LOGIN}`,
-    CONTACT_US: `/${PATHS_PUBLIC.CONTACT_US}`,
+    HOME: {
+      path: `/${PATHS_PUBLIC.HOME}`,
+      title: 'Inicio',
+    },
+    LOGIN: {
+      path: `/${PATHS_PUBLIC.LOGIN}`,
+      title: 'Login',
+    },
+    CONTACT_US: {
+      path: `/${PATHS_PUBLIC.CONTACT_US}`,
+      title: 'Contactanos'
+    },
   },
   PRIVATE: {
-    ITEMS: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.ITEMS}`,
-    TAGS: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.TAGS}`,
-    ADMIN_IMAGES: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.ADMIN_IMAGES}`,
-    DEVELOPER: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.DEVELOPER}`,
+    ITEMS: {
+      path: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.ITEMS}`,
+      title: 'Crear Items'
+    },
+    TAGS: {
+      path: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.TAGS}`,
+      title: 'Crear Etiquetas'
+    },
+    ADMIN_IMAGES: {
+      path: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.ADMIN_IMAGES}`,
+      title: 'Admin Imagenes'
+    },
+    DEVELOPER: {
+      path: `/${PATHS_PRIVATE.ROOT}/${PATHS_PRIVATE.DEVELOPER}`,
+      title: 'Developer'
+    },
   }
 };

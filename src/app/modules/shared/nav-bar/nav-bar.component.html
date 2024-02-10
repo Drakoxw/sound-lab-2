@@ -18,7 +18,7 @@
         [class]="authService.showMenu() ? 'flex' : 'hidden'"
         class="list-style-none absolute mt-[33px] lg:static z-50 ml-auto bg-black bg-opacity-90 lg:bg-transparent lg:bg-opacity-100 flex-col pl-0 lg:mt-1 lg:flex-row text-gray-400 lg:mr-4 w-screen lg:w-full lg:justify-end"
       >
-        <a [routerLink]="routes.PUBLIC.HOME" routerLinkActive #rlH="routerLinkActive">
+        <a [routerLink]="routes.PUBLIC.HOME.path" routerLinkActive #rlH="routerLinkActive">
           <li
             [class]="rlH.isActive ? 'bg-pink-800' : ''"
             class="hover:bg-pink-800 hover:bg-opacity-50 hover:text-white pl-2 lg:mb-0 lg:pl-0 lg:pr-1 p-2 cursor-pointer"
@@ -26,13 +26,13 @@
             <span
               [class]="rlH.isActive ? 'text-white' : ''"
               class="p-0 transition duration-200 hover:ease-in-out focus:text-white motion-reduce:transition-none lg:px-2 [&.active]:text-white"
-              >Inicio</span
+              >{{ routes.PUBLIC.HOME.title }}</span
             >
           </li>
         </a>
 
         <a
-          [routerLink]="routes.PUBLIC.CONTACT_US"
+          [routerLink]="routes.PUBLIC.CONTACT_US.path"
           routerLinkActive
           #rlC="routerLinkActive"
         >
@@ -43,13 +43,13 @@
             <span
               [class]="rlC.isActive ? 'text-white' : ''"
               class="p-0 transition duration-200 hover:ease-in-out focus:text-white motion-reduce:transition-none lg:px-2 [&.active]:text-white"
-              >Contacto</span
+              >{{ routes.PUBLIC.CONTACT_US.title }}</span
             >
           </li>
         </a>
 
         <a
-          [routerLink]="routes.PUBLIC.LOGIN"
+          [routerLink]="routes.PUBLIC.LOGIN.path"
           routerLinkActive
           #rlLg="routerLinkActive"
         >
@@ -60,14 +60,14 @@
             <span
               [class]="rlLg.isActive ? 'text-white' : ''"
               class="p-0 transition duration-200 hover:ease-in-out focus:text-white motion-reduce:transition-none lg:px-2 [&.active]:text-white"
-              >Login</span
+              >{{ routes.PUBLIC.LOGIN.title }}</span
             >
           </li>
         </a>
 
         <a
           *ngIf="authService.isAdmin()"
-          [routerLink]="routes.PRIVATE.DEVELOPER"
+          [routerLink]="routes.PRIVATE.DEVELOPER.path"
           routerLinkActive
           #rlDev="routerLinkActive"
         >
@@ -78,14 +78,14 @@
             <span
               [class]="rlDev.isActive ? 'text-white' : ''"
               class="p-0 transition duration-200 hover:ease-in-out focus:text-white motion-reduce:transition-none lg:px-2 [&.active]:text-white"
-              >Desarrollo</span
+              >{{ routes.PRIVATE.DEVELOPER.title }}</span
             >
           </li>
         </a>
 
         <a
           *ngIf="authService.isAdmin()"
-          [routerLink]="routes.PRIVATE.ITEMS"
+          [routerLink]="routes.PRIVATE.ITEMS.path"
           routerLinkActive
           #rlAdmin="routerLinkActive"
         >
