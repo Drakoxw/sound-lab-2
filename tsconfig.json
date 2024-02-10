@@ -33,6 +33,7 @@
       "@pipes/*": [ "./src/app/core/pipes/*" ],
       "@services/*": [ "./src/app/services/*" ],
       "@utils/*": [ "./src/app/utils/*" ],
+      "@core/*": [ "./src/app/core/*" ],
     }
   },
   "angularCompilerOptions": {

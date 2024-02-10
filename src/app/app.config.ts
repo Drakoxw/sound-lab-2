@@ -1,15 +1,20 @@
-import { ApplicationConfig, importProvidersFrom, isDevMode } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  isDevMode,
+} from '@angular/core';
 import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideServiceWorker } from '@angular/service-worker';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, withInterceptors } from '@angular/common/http';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { AuthorizationInterceptor } from '@core/interceptors/authorization.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,7 +30,10 @@ export const appConfig: ApplicationConfig = {
       registrationStrategy: 'registerWhenStable:30000',
     }),
     importProvidersFrom(HttpClientModule, ToastrModule),
-    provideHttpClient(withFetch()),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([AuthorizationInterceptor])
+    ),
     provideAnimations(),
     provideToastr(),
   ],
