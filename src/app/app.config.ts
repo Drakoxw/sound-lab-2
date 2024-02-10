@@ -15,9 +15,9 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       routes,
-      withViewTransitions({
-        skipInitialTransition: true,
-      })
+      // withViewTransitions({
+      //   skipInitialTransition: true,
+      // })
     ),
     provideClientHydration(),
     provideServiceWorker('ngsw-worker.js', {
