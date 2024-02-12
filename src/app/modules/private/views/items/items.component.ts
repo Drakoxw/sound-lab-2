@@ -7,12 +7,6 @@ import {
   inject,
   runInInjectionContext,
 } from '@angular/core';
-
-import {
-  HttpService,
-  ItemStoreService,
-  ToastrAlertService,
-} from '@services/index';
 import { CommonModule } from '@angular/common';
 import {
   FormArray,
@@ -24,6 +18,12 @@ import {
   Validators,
 } from '@angular/forms';
 
+
+
+import {
+  ItemStoreService,
+  ToastrAlertService,
+} from '@services/index';
 import { ButtonComponent } from '@shared/button/button.component';
 import { IMG_DEFAULT } from '@constants/index';
 import { Subscription } from 'rxjs';
@@ -68,7 +68,6 @@ export default class ItemsComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
 
   private toastr = inject(ToastrAlertService);
-  private httpServ = inject(HttpService);
   private itemStoreServ = inject(ItemStoreService);
   public tagsServ = inject(TagsService);
   injector = inject(Injector);
