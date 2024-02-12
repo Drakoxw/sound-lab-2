@@ -18,8 +18,6 @@ import {
   Validators,
 } from '@angular/forms';
 
-
-
 import {
   ItemStoreService,
   ToastrAlertService,
@@ -69,8 +67,8 @@ export default class ItemsComponent implements OnInit, OnDestroy {
 
   private toastr = inject(ToastrAlertService);
   private itemStoreServ = inject(ItemStoreService);
+  private injector = inject(Injector);
   public tagsServ = inject(TagsService);
-  injector = inject(Injector);
 
   load = this.itemStoreServ.loadingItem();
   imgPrincipal = imgDefault;
