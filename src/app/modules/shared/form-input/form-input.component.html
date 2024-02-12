@@ -1,1 +1,16 @@
-<p>form-input works!</p>
+<div class="w-full">
+  <label [class]="error ? classLabel.error : classLabel.ok">{{ label }}</label>
+  <input
+    [class]="error ? classInput.error : classInput.ok"
+    [type]="type"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    (input)="onChange(value)"
+    (blur)="onTouched()"
+  />
+  <p *ngIf="error && showErrorMessage" class="text-red-600 dark:text-red-500 text-xs">
+    <span class="font-medium">{{error}}</span>
+  </p>
+</div>
+

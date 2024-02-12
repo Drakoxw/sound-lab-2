@@ -2,6 +2,7 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { HttpService, ToastrAlertService } from '@services/index';
 
 import { DataListTags } from '@interfaces/index';
+import { Subscription } from 'rxjs';
 
 interface State {
   list: DataListTags[]
@@ -16,16 +17,20 @@ export class TagsService {
 
   httpService = inject(HttpService)
   toastr = inject(ToastrAlertService)
-
   #state = signal<State>({ list: [], load: false, reloadList: false })
 
   list = computed(() => this.#state().list);
   load = computed(() => this.#state().load);
   reloadList = computed(() => this.#state().reloadList);
-
   newTag = ''
-  private blocking = false
 
+  private blocking = false
+  private subs: Subscription[] = []
+
+  /**
+   * Lista los TAGS creados y guardados en DB
+   * @returns
+   */
   listTags() {
     if (this.blocking) {
       return
@@ -33,7 +38,7 @@ export class TagsService {
 
     this.blocking = true;
     this.#state.update((value) => ({ ...value, reloadList: true}));
-    this.httpService.listTags().subscribe(res => {
+    this.subs[0] = this.httpService.listTags().subscribe(res => {
       if (!res.error && res.data) {
         this.#state.update((value) => ({ ...value, list: res.data ?? []}));
       } else {
@@ -47,7 +52,7 @@ export class TagsService {
   createTag() {
     if (this.newTag.length < 3) { this.toastr.warning('El nombre debe tener al menos 3 caracteres') }
     this.#state.update((value) => ({ ...value, load: true }));
-    this.httpService.createTag(this.newTag).subscribe(res => {
+    this.subs[1] = this.httpService.createTag(this.newTag).subscribe(res => {
       this.newTag = ''
       this.#state.update((value) => ({ ...value, load: false }));
       if (!res.error) {
@@ -57,6 +62,10 @@ export class TagsService {
         this.toastr.error(res.msg);
       }
     })
+  }
+
+  onDestroy() {
+    this.subs.forEach(sub => sub.unsubscribe())
   }
 
 }

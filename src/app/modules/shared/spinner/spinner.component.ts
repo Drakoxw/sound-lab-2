@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+
+type Mode = 'full' | 'small'
 
 @Component({
   selector: 'app-spinner',
   standalone: true,
-  imports: [],
-  templateUrl: './spinner.component.html',
-  styleUrl: './spinner.component.css'
+  imports: [CommonModule],
+  templateUrl: './spinner.component.html'
 })
 export class SpinnerComponent {
-
+  @Input() mode: Mode = 'full';
 }
