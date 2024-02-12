@@ -122,6 +122,7 @@ export class ButtonComponent {
   @Output() buttonClick = new EventEmitter<string>();
   @Input() styleButton: StyleButton = 'default';
   @Input() type: TypeButton = 'button';
+  @Input() title: string = '';
   @Input() set isDisable(d: boolean) {
     this.setDisable(d);
   }

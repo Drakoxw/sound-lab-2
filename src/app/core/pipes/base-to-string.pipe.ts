@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Base64 } from '@interfaces/models';
 
 @Pipe({
-  name: 'baseToString'
+  name: 'baseToString',
+  standalone: true
 })
 export class BaseToStringPipe implements PipeTransform {
 

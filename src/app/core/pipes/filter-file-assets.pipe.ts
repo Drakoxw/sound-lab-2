@@ -3,7 +3,8 @@ import { FileAssets, FileAssetsData } from '@interfaces/index';
 import { logDev } from '@utils/console';
 
 @Pipe({
-  name: 'filterFileAssets'
+  name: 'filterFileAssets',
+  standalone: true
 })
 export class FilterFileAssetsPipe implements PipeTransform {
 
