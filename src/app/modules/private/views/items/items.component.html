@@ -32,7 +32,7 @@
         <img
           class="w-40 h-40"
           [ngClass]="imagen.validateError ? 'border border-red-500' : ''"
-          [src]="imgPrincipal"
+          [src]="itemStoreServ.url | async"
           alt="imagen"
         />
       </picture>

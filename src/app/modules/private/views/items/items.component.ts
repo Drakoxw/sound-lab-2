@@ -66,7 +66,7 @@ export default class ItemsComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
 
   private toastr = inject(ToastrAlertService);
-  private itemStoreServ = inject(ItemStoreService);
+  public itemStoreServ = inject(ItemStoreService);
   private injector = inject(Injector);
   public tagsServ = inject(TagsService);
 

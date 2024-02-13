@@ -70,26 +70,13 @@
   title="Confirmar Eliminacion"
 />
 
-<!-- <swal
-  #deleteSwal
-  title="Confirmar Eliminacion"
+<lib-modal
+  [show]="changeModal"
+  (close)="changeModal = false"
+  icon="warning"
   text="Esto puede hacer que items se queden sin imagenes..."
-  icon="question"
-  [showCancelButton]="true"
-  (confirm)="deleteFile()"
-  [focusCancel]="true"
->
-</swal> -->
-
-<!-- <swal
-  #changeSwal
-  title="Confirmar Cambio de imagen"
-  [imageUrl]="base | baseToString"
-  text="Esto reemplaza la imagen anterior por esta nueva imagen"
-  icon="question"
-  imageHeight="150"
-  [showCancelButton]="true"
   (confirm)="confirmChange()"
-  [focusCancel]="true"
->
-</swal> -->
+  showCancelButton
+  showConfirmButton
+  title="Confirmar Cambio de imagen"
+/>

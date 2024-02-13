@@ -4,7 +4,6 @@ import {
   Input,
   OnDestroy,
   Output,
-  ViewChild,
   inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -38,7 +37,8 @@ export class ModalAdminImagesComponent implements OnDestroy {
   // @ViewChild('changeSwal') changeSwal!: SwalComponent;
   // @ViewChild('deleteSwal') deleteSwal!: SwalComponent;
 
-  deleteModal = true
+  deleteModal = false
+  changeModal = false
 
   assetsServ = inject(AssetsService);
   toast = inject(ToastrAlertService);
@@ -63,15 +63,13 @@ export class ModalAdminImagesComponent implements OnDestroy {
   activateDelete(path: string) {
     this.deletePath = path;
     this.deleteModal = true;
-    // this.deleteSwal.fire();
   }
 
   deleteFile() {
-    alert('eliminando')
-    // if (this.deletePath) {
-    //   this.assetsServ.deleteAsset(this.deletePath);
-    //   this.close();
-    // }
+    if (this.deletePath) {
+      this.assetsServ.deleteAsset(this.deletePath);
+      this.close();
+    }
   }
 
   loadBase(base: Base64) {
@@ -85,7 +83,7 @@ export class ModalAdminImagesComponent implements OnDestroy {
     }
     this.subs.push(
       timer(300).subscribe({
-        // complete: () => this.changeSwal.fire(),
+        complete: () => this.changeModal = true,
       })
     );
   }
